@@ -623,6 +623,7 @@ section { padding-block: var(--space-2xl); }
 .cta-banner p { color: rgba(246,241,230,0.82); margin-bottom: var(--space-lg); }
 
 /* ---------- Contact ---------- */
+.contact { background: var(--color-section-alt); }
 .container.contact-inner--call {
   display: flex;
   flex-direction: column;
