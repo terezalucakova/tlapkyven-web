@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Sitemap bude doplněna po zprovoznění produkční domény.
