@@ -602,10 +602,23 @@ section { padding-block: var(--space-2xl); }
 }
 .area-hub-icon { width: 18px; height: 18px; flex-shrink: 0; }
 
+.area-spoke {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: var(--radius);
+  border-left: 1.5px dashed rgba(74, 59, 46, 0.4);
+  transform-origin: top;
+  transform: rotate(calc(var(--angle) + 180deg));
+  z-index: 1;
+}
+
 .area-city {
   position: absolute;
   top: 50%;
   left: 50%;
+  z-index: 2;
   transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle)));
   background: var(--color-white);
   color: var(--color-forest-dark);
@@ -803,6 +816,7 @@ section { padding-block: var(--space-2xl); }
     padding: var(--space-lg) var(--space-md);
   }
   .area-hub { position: static; transform: none; order: -1; width: 100%; justify-content: center; margin-bottom: 0.3rem; }
+  .area-spoke { display: none; }
   .area-city { position: static; transform: none !important; }
   .area-city:hover, .area-city:focus-visible { transform: scale(1.08) !important; }
 }
