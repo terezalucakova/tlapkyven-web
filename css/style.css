@@ -537,7 +537,7 @@ section { padding-block: var(--space-2xl); }
 /* ---------- Approach ---------- */
 .container.approach-inner {
   max-width: 640px;
-  margin-inline: auto;
+  margin-inline: 0;
 }
 .approach-copy h2 { margin-bottom: var(--space-md); }
 .approach-copy p { color: var(--color-charcoal-soft); margin-bottom: var(--space-md); max-width: 50ch; }
