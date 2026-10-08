@@ -536,11 +536,22 @@ section { padding-block: var(--space-2xl); }
 
 /* ---------- Approach ---------- */
 .container.approach-inner {
-  max-width: 640px;
-  margin-inline: 0;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: var(--space-xl);
 }
 .approach-copy h2 { margin-bottom: var(--space-md); }
 .approach-copy p { color: var(--color-charcoal-soft); margin-bottom: var(--space-md); max-width: 50ch; }
+.approach-media { max-width: 420px; margin-inline: auto; }
+.approach-video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
 .approach-points {
   display: flex;
   flex-direction: column;
@@ -764,6 +775,8 @@ section { padding-block: var(--space-2xl); }
   .process-steps { grid-template-columns: repeat(2, 1fr); }
   .services-grid { grid-template-columns: 1fr; }
   .about-inner { grid-template-columns: 1fr; }
+  .container.approach-inner { grid-template-columns: 1fr; }
+  .approach-media { order: -1; }
   .area-inner { grid-template-columns: 1fr; }
   .area-visual { order: -1; }
   .area-ring { max-width: 480px; --radius: 192px; }
