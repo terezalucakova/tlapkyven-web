@@ -377,23 +377,23 @@ section { padding-block: var(--space-2xl); }
   overflow-x: auto;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
+  width: fit-content;
+  max-width: 100%;
+  margin-inline: auto;
 }
 .pricing-table {
-  width: 100%;
-  table-layout: fixed;
   border-collapse: collapse;
   background: var(--color-white);
   font-size: 0.95rem;
 }
 .pricing-table th,
 .pricing-table td {
-  padding: 0.85em 1.25em;
+  padding: 0.85em 1.1em;
   text-align: left;
   overflow-wrap: break-word;
 }
 .pricing-table th:last-child,
 .pricing-table td:last-child {
-  width: 38%;
   white-space: nowrap;
 }
 .pricing-table thead th {
@@ -820,6 +820,8 @@ section { padding-block: var(--space-2xl); }
   .hero-actions .btn { justify-content: center; }
   .cta-banner-inner { text-align: left; }
   .footer-inner { grid-template-columns: 1fr; gap: var(--space-md); }
+
+  .mini-gallery { grid-template-columns: 1fr; max-width: 360px; }
 
   .area-ring {
     position: static;
