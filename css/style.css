@@ -535,6 +535,7 @@ section { padding-block: var(--space-2xl); }
 }
 
 /* ---------- Approach ---------- */
+.approach { background: var(--color-section-alt); }
 .container.approach-inner {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -573,7 +574,6 @@ section { padding-block: var(--space-2xl); }
 }
 
 /* ---------- Area ---------- */
-.area { background: var(--color-section-alt); }
 .area-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -587,10 +587,10 @@ section { padding-block: var(--space-2xl); }
 .area-visual { display: flex; justify-content: center; }
 
 .area-ring {
-  --radius: 285px;
+  --radius: 225px;
   position: relative;
   width: 100%;
-  max-width: 580px;
+  max-width: 460px;
   aspect-ratio: 1;
   margin-inline: auto;
   border-radius: 50%;
@@ -638,16 +638,16 @@ section { padding-block: var(--space-2xl); }
   transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle)));
   background: var(--color-white);
   color: var(--color-forest-dark);
-  padding: 0.4em 0.85em;
+  padding: 0.32em 0.65em;
   border-radius: var(--radius-pill);
-  font-size: 0.76rem;
+  font-size: 0.66rem;
   font-weight: 600;
   white-space: nowrap;
   box-shadow: var(--shadow-card);
   transition: transform var(--transition), box-shadow var(--transition);
   cursor: default;
 }
-.area-city--big { font-size: 0.95rem; font-weight: 700; padding: 0.55em 1.05em; }
+.area-city--big { font-size: 0.82rem; font-weight: 700; padding: 0.42em 0.85em; }
 .area-city:hover,
 .area-city:focus-visible {
   transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle))) scale(1.22);
