@@ -778,7 +778,6 @@ section { padding-block: var(--space-2xl); }
   .container.approach-inner { grid-template-columns: 1fr; }
   .approach-media { order: -1; }
   .area-inner { grid-template-columns: 1fr; }
-  .area-visual { order: -1; }
   .area-ring { max-width: 480px; --radius: 192px; }
   .area-city { font-size: 0.7rem; padding: 0.35em 0.7em; }
   .area-city--big { font-size: 0.82rem; }
