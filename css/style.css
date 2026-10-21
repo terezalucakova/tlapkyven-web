@@ -420,11 +420,10 @@ section { padding-block: var(--space-2xl); }
 
 /* ---------- About ---------- */
 .about { background: var(--color-section-alt); }
-.about-inner {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  align-items: center;
-  gap: var(--space-xl);
+.container.about-inner {
+  max-width: 680px;
+  margin-inline: 0;
+  margin-bottom: var(--space-xl);
 }
 .about-copy h2 { margin-bottom: var(--space-md); }
 .about-copy p { margin-bottom: var(--space-sm); color: var(--color-charcoal-soft); }
@@ -447,9 +446,9 @@ section { padding-block: var(--space-2xl); }
 
 .mini-gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-md);
-  max-width: 480px;
+  max-width: 980px;
   margin-inline: auto;
 }
 .mini-gallery img {
