@@ -279,7 +279,11 @@
         <p>Doma mi společnost dělají dva výmarští ohaři Břéťa a Eda a pražský krysařík Mercedes. Psi proto nejsou jen moje práce. Jsou přirozenou součástí každého mého dne.</p>
       </div>
 
-      <div class="mini-gallery" role="list" aria-label="Fotografie Daniely s jejími psy">
+      <div class="gallery-carousel-wrap">
+        <button type="button" class="carousel-nav carousel-nav--prev" id="galleryPrev" aria-label="Předchozí fotografie">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="mini-gallery" id="miniGallery" role="list" aria-label="Fotografie Daniely s jejími psy">
         <figure role="listitem">
           <button type="button" class="gallery-trigger" data-full="assets/images/o-mne-daniela.jpg" data-full-webp="assets/images/o-mne-daniela.webp" aria-label="Zvětšit fotografii: Daniela Stoklasová se svými třemi psy u jezera">
             <picture>
@@ -392,6 +396,10 @@
             </picture>
           </button>
         </figure>
+        </div>
+        <button type="button" class="carousel-nav carousel-nav--next" id="galleryNext" aria-label="Další fotografie">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M9 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
     </div>
   </section>

@@ -196,6 +196,21 @@
     });
   }
 
+  /* ---------- Gallery carousel nav ---------- */
+  var galleryTrack = document.getElementById("miniGallery");
+  var galleryPrev = document.getElementById("galleryPrev");
+  var galleryNext = document.getElementById("galleryNext");
+
+  if (galleryTrack && galleryPrev && galleryNext) {
+    function scrollGallery(direction) {
+      var figure = galleryTrack.querySelector("figure");
+      var step = figure ? figure.getBoundingClientRect().width + 24 : 300;
+      galleryTrack.scrollBy({ left: direction * step, behavior: "smooth" });
+    }
+    galleryPrev.addEventListener("click", function () { scrollGallery(-1); });
+    galleryNext.addEventListener("click", function () { scrollGallery(1); });
+  }
+
   /* ---------- Gallery lightbox ---------- */
   var lightbox = document.getElementById("lightbox");
   var lightboxImg = document.getElementById("lightboxImg");
