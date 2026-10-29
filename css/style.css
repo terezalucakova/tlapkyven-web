@@ -591,13 +591,15 @@ section { padding-block: var(--space-2xl); }
 .approach { background: var(--color-cream-soft); }
 .container.approach-inner {
   max-width: 640px;
-  margin-inline: 0;
+  margin-inline: auto;
+  text-align: center;
 }
-.approach-copy h2 { margin-bottom: var(--space-md); }
-.approach-copy p { color: var(--color-charcoal-soft); margin-bottom: var(--space-md); max-width: 50ch; }
+.approach-copy h2 { margin-bottom: var(--space-md); margin-inline: auto; }
+.approach-copy p { color: var(--color-charcoal-soft); margin-bottom: var(--space-md); max-width: 50ch; margin-inline: auto; }
 .approach-points {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 0.6rem;
 }
 .approach-points li {
