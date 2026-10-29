@@ -211,6 +211,42 @@
     galleryNext.addEventListener("click", function () { scrollGallery(1); });
   }
 
+  /* ---------- Gallery dots ---------- */
+  var galleryDots = document.getElementById("galleryDots");
+  if (galleryTrack && galleryDots) {
+    var figures = Array.prototype.slice.call(galleryTrack.querySelectorAll("figure"));
+    var dots = figures.map(function () {
+      var dot = document.createElement("span");
+      galleryDots.appendChild(dot);
+      return dot;
+    });
+
+    function updateActiveDot() {
+      if (!figures.length) return;
+      var trackRect = galleryTrack.getBoundingClientRect();
+      var closestIndex = 0;
+      var closestDistance = Infinity;
+      figures.forEach(function (figure, index) {
+        var rect = figure.getBoundingClientRect();
+        var distance = Math.abs(rect.left - trackRect.left);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          closestIndex = index;
+        }
+      });
+      dots.forEach(function (dot, index) {
+        dot.classList.toggle("is-active", index === closestIndex);
+      });
+    }
+
+    var dotsScrollTimeout;
+    galleryTrack.addEventListener("scroll", function () {
+      clearTimeout(dotsScrollTimeout);
+      dotsScrollTimeout = setTimeout(updateActiveDot, 80);
+    });
+    updateActiveDot();
+  }
+
   /* ---------- Gallery lightbox ---------- */
   var lightbox = document.getElementById("lightbox");
   var lightboxImg = document.getElementById("lightboxImg");
