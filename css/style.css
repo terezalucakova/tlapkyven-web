@@ -709,7 +709,6 @@ section { padding-block: var(--space-2xl); }
   transition: transform var(--transition), box-shadow var(--transition);
   cursor: default;
 }
-.area-city--big { font-size: 0.82rem; font-weight: 700; padding: 0.42em 0.85em; }
 .area-city:hover,
 .area-city:focus-visible {
   transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle))) scale(1.22);
@@ -842,7 +841,6 @@ section { padding-block: var(--space-2xl); }
   .area-inner { grid-template-columns: 1fr; }
   .area-ring { max-width: 480px; --radius: 192px; }
   .area-city { font-size: 0.7rem; padding: 0.35em 0.7em; }
-  .area-city--big { font-size: 0.82rem; }
 }
 
 @media (max-width: 860px) {
