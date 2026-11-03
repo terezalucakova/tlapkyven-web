@@ -649,15 +649,33 @@ section { padding-block: var(--space-2xl); }
 .area-visual { display: flex; justify-content: center; }
 
 .area-ring {
-  --radius: 225px;
+  --radius: 150px;
   position: relative;
   width: 100%;
-  max-width: 460px;
+  max-width: 380px;
   aspect-ratio: 1;
   margin-inline: auto;
   border-radius: 50%;
   background: radial-gradient(circle, var(--color-cream-soft), var(--color-section-alt));
-  border: 2px dashed rgba(74, 59, 46, 0.35);
+  border: 1.5px solid rgba(140, 90, 52, 0.3);
+  box-shadow: inset 0 0 0 10px var(--color-cream), var(--shadow-card);
+}
+
+.area-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--color-terracotta);
+  opacity: 0.35;
+  animation: area-pulse 2.6s ease-out infinite;
+}
+@keyframes area-pulse {
+  0% { transform: translate(-50%, -50%) scale(0.7); opacity: 0.4; }
+  100% { transform: translate(-50%, -50%) scale(2.2); opacity: 0; }
 }
 
 .area-hub {
@@ -671,14 +689,14 @@ section { padding-block: var(--space-2xl); }
   gap: 0.4em;
   background: var(--color-terracotta);
   color: var(--color-white);
-  padding: 0.85em 1.3em;
+  padding: 0.75em 1.15em;
   border-radius: var(--radius-pill);
   font-weight: 700;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
   white-space: nowrap;
   box-shadow: var(--shadow-card);
 }
-.area-hub-icon { width: 18px; height: 18px; flex-shrink: 0; }
+.area-hub-icon { width: 16px; height: 16px; flex-shrink: 0; }
 
 .area-spoke {
   position: absolute;
@@ -686,7 +704,7 @@ section { padding-block: var(--space-2xl); }
   left: 50%;
   width: 0;
   height: var(--radius);
-  border-left: 1.5px dashed rgba(74, 59, 46, 0.4);
+  border-left: 1px solid rgba(140, 90, 52, 0.35);
   transform-origin: top;
   transform: rotate(calc(var(--angle) + 180deg));
   z-index: 1;
@@ -700,9 +718,9 @@ section { padding-block: var(--space-2xl); }
   transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle)));
   background: var(--color-white);
   color: var(--color-forest-dark);
-  padding: 0.32em 0.65em;
+  padding: 0.4em 0.8em;
   border-radius: var(--radius-pill);
-  font-size: 0.66rem;
+  font-size: 0.72rem;
   font-weight: 600;
   white-space: nowrap;
   box-shadow: var(--shadow-card);
@@ -711,9 +729,13 @@ section { padding-block: var(--space-2xl); }
 }
 .area-city:hover,
 .area-city:focus-visible {
-  transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle))) scale(1.22);
+  transform: translate(-50%, -50%) rotate(var(--angle)) translateY(calc(-1 * var(--radius))) rotate(calc(-1 * var(--angle))) scale(1.18);
   box-shadow: var(--shadow-soft);
   z-index: 3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .area-pulse { animation: none; opacity: 0.2; }
 }
 
 /* ---------- FAQ ---------- */
@@ -839,8 +861,6 @@ section { padding-block: var(--space-2xl); }
   .mini-gallery img { width: min(50vw, 360px); height: auto; }
   .mini-gallery figure { width: min(50vw, 360px); }
   .area-inner { grid-template-columns: 1fr; }
-  .area-ring { max-width: 480px; --radius: 192px; }
-  .area-city { font-size: 0.7rem; padding: 0.35em 0.7em; }
 }
 
 @media (max-width: 860px) {
@@ -891,15 +911,29 @@ section { padding-block: var(--space-2xl); }
     max-width: none;
     aspect-ratio: auto;
     border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.5rem;
     padding: var(--space-lg) var(--space-md);
   }
-  .area-hub { position: static; transform: none; order: -1; width: 100%; justify-content: center; margin-bottom: 0.3rem; }
+  .area-pulse { display: none; }
+  .area-hub {
+    position: static;
+    transform: none;
+    flex-basis: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
   .area-spoke { display: none; }
-  .area-city { position: static; transform: none !important; }
+  .area-city {
+    position: static;
+    transform: none !important;
+    font-size: 0.8rem;
+    padding: 0.45em 0.85em;
+  }
   .area-city:hover, .area-city:focus-visible { transform: scale(1.08) !important; }
 }
 
